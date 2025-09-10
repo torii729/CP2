@@ -15,7 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="Lab01.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab02.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab03.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab04.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
