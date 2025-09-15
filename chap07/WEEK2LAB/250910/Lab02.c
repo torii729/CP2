@@ -17,32 +17,45 @@
 #include <string.h>
 
 // 구조체 타입 선언
-typedef struct _contact {
+typedef struct _contact 
+{
     char name[64];
     char phone1[24];
 } Contact;
 
+int main()
+{
+    test_printArrayContact();
+    test_copyArrayContact();
+    return 0;
+}
+
 // 구조체 배열 출력 함수
-void printArrayContact(Contact R[], int size) {
-    for (int i = 0; i < size; i++) {
+void printArrayContact(Contact R[], int size)
+{
+    for (int i = 0; i < size; i++) 
+    {
         printf("이름: %s, 전화번호: %s\n", R[i].name, R[i].phone1);
     }
     printf("\n");
 }
 
 // 구조체 배열 복사 함수
-void copyArrayContact(Contact from[], Contact to[], int size) {
-    for (int i = 0; i < size; i++) {
+void copyArrayContact(Contact from[], Contact to[], int size) 
+{
+    for (int i = 0; i < size; i++)
+    {
         to[i] = from[i];   // 구조체 대입은 멤버 단위로 자동 복사됨
     }
 }
 
 // 출력 테스트 함수
-int test_printArrayContact() {
+int test_printArrayContact() 
+{
     Contact arr[3] = {
-        {"홍길동", "010-1111-2222"},
-        {"김철수", "010-3333-4444"},
-        {"이영희", "010-5555-6666"}
+        {"길동", "010-1111-2222"},
+        {"철수", "010-3333-4444"},
+        {"기민", "010-5555-6666"}
     };
 
     printf("test_printArrayContact 결과:\n");
@@ -51,7 +64,8 @@ int test_printArrayContact() {
 }
 
 // 복사 테스트 함수
-int test_copyArrayContact() {
+int test_copyArrayContact() 
+{
     Contact src[2] = {
         {"Alice", "010-1234-5678"},
         {"Bob",   "010-9876-5432"}
@@ -69,8 +83,3 @@ int test_copyArrayContact() {
     return 0;
 }
 
-int main() {
-    test_printArrayContact();
-    test_copyArrayContact();
-    return 0;
-}

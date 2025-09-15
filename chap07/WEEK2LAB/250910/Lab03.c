@@ -18,12 +18,20 @@
 
 #include <stdio.h>
 
+int main()
+{
+    test_selectionSortInt();
+    return 0;
+}
+
 // 특정 구간에서 최소값의 인덱스 반환
-int findMinInt(int R[], int from, int to) {
-    if (from > to) return -1; // 잘못된 구간
+int findMinInt(int R[], int from, int to)
+{
     int minIndex = from;
-    for (int i = from + 1; i <= to; i++) {
-        if (R[i] < R[minIndex]) {
+    for (int i = from + 1; i <= to; i++) 
+    {
+        if (R[i] < R[minIndex]) 
+        {
             minIndex = i;
         }
     }
@@ -31,51 +39,49 @@ int findMinInt(int R[], int from, int to) {
 }
 
 // 배열의 두 원소 교환
-void swapInt(int R[], int aindex, int bindex) {
+void swapInt(int R[], int aindex, int bindex)
+{
     int temp = R[aindex];
     R[aindex] = R[bindex];
     R[bindex] = temp;
 }
 
 // 선택 정렬 함수
-int selectionSortInt(int R[], int length) {
-    if (length <= 0) return -1; // 실패
-    for (int i = 0; i < length - 1; i++) {
+int selectionSortInt(int R[], int length)
+{
+    for (int i = 0; i < length - 1; i++) 
+    {
         int minIndex = findMinInt(R, i, length - 1);
-        if (minIndex != i) {
+        if (minIndex != i)
+        {
             swapInt(R, i, minIndex);
         }
     }
-    return 0; // 성공
+    return 0;
 }
 
 // 선택 정렬 테스트 함수
-int test_selectionSortInt(void) {
+int test_selectionSortInt(void)
+{
     int arr[8] = { 64, 25, 12, 22, 11, 90, 55, 3 };
     int length = 8;
 
     printf("원래 배열: ");
-    for (int i = 0; i < length; i++) {
+    for (int i = 0; i < length; i++)
+    {
         printf("%d ", arr[i]);
     }
     printf("\n");
 
     int result = selectionSortInt(arr, length);
-    if (result != 0) {
-        printf("정렬 실패!\n");
-        return -1;
-    }
 
     printf("정렬된 배열: ");
-    for (int i = 0; i < length; i++) {
+    for (int i = 0; i < length; i++)
+    {
         printf("%d ", arr[i]);
     }
     printf("\n");
 
-    return 0; // 성공
-}
-
-int main() {
-    test_selectionSortInt();
     return 0;
 }
+
