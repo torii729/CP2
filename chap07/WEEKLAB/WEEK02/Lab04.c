@@ -16,6 +16,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "struct.h"
+
+int selecttionSortFloat(float R[], int n);
+int qsortfloat(const void* a, const void* b);
+int selectionSortInt(void* base, int n, int sz, int (*cmp)(void*, void*));
+int contactUp(const void* a, const void* b);
 
 // 메인
 int main(void)
@@ -24,24 +30,24 @@ int main(void)
 }
 
 // 1번. selecttionSortFloat
-int selecttionSortFloat(float R[], int n) 
+int selecttionSortFloat(float R[], int n)
 {
     int i = 0;
     int j = 0;
     int m = 0;
 
-    for (i = 0; i < n - 1; i++) 
+    for (i = 0; i < n - 1; i++)
     {
         m = i;
 
-        for (j = i + 1; j < n; j++) 
+        for (j = i + 1; j < n; j++)
         {
             if (R[j] < R[m])
             {
                 m = j;
             }
         }
-        if (m != i) 
+        if (m != i)
         {
             float t = R[i];
             R[i] = R[m];
@@ -52,7 +58,7 @@ int selecttionSortFloat(float R[], int n)
 }
 
 // 2번. qsort로 float 정렬
-int cmpFloatAsc(const void* a, const void* b) 
+int qsortfloat(const void* a, const void* b)
 {
     float x = *(const float*)a;
     float y = *(const float*)b;
@@ -78,7 +84,7 @@ int selectionSortInt(void* base, int n, int sz, int (*cmp)(void*, void*))
             {
                 c = cmp(pj, pm);
             }
-            else 
+            else
             {
                 int x = *(int*)pj;
                 int y = *(int*)pm;
@@ -88,9 +94,9 @@ int selectionSortInt(void* base, int n, int sz, int (*cmp)(void*, void*))
             }
             if (c < 0) m = j;
         }
-        if (m != i) 
+        if (m != i)
         {
-            for (k = 0; k < sz; k++) 
+            for (k = 0; k < sz; k++)
             {
                 char* p = a + i * sz + k;
                 char* q = a + m * sz + k;
@@ -102,14 +108,9 @@ int selectionSortInt(void* base, int n, int sz, int (*cmp)(void*, void*))
 }
 
 // 4번. qsort로 Contact 정렬
-typedef struct _contact 
-{
-    char name[64];
-    char phone1[24];
-} Contact;
 
 /* 이름 기준 오름차순 */
-int cmpContactByName(const void* a, const void* b) 
+int contactUp(const void* a, const void* b)
 {
     const Contact* x = (const Contact*)a;
     const Contact* y = (const Contact*)b;

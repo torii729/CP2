@@ -15,13 +15,12 @@
 
 #include <stdio.h>
 #include <string.h>
+#include "struct.h"
 
-// 구조체 타입 선언
-typedef struct _contact 
-{
-    char name[64];
-    char phone1[24];
-} Contact;
+void copyArrayContact(Contact from[], Contact to[], int size);
+void printArrayContact(Contact R[], int size);
+int test_copyArrayContact();
+int test_printArrayContact();
 
 int main()
 {
@@ -30,56 +29,59 @@ int main()
     return 0;
 }
 
-// 구조체 배열 출력 함수
-void printArrayContact(Contact R[], int size)
-{
-    for (int i = 0; i < size; i++) 
-    {
-        printf("이름: %s, 전화번호: %s\n", R[i].name, R[i].phone1);
-    }
-    printf("\n");
-}
-
 // 구조체 배열 복사 함수
 void copyArrayContact(Contact from[], Contact to[], int size) 
 {
     for (int i = 0; i < size; i++)
     {
-        to[i] = from[i];   // 구조체 대입은 멤버 단위로 자동 복사됨
+        to[i] = from[i];
     }
+}
+
+
+// 구조체 배열 출력 함수
+void printArrayContact(Contact R[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("이름 : %s, 전화번호 : %s\n", R[i].name, R[i].phone1);
+    }
+    printf("\n");
+}
+
+
+// 복사 테스트 함수
+int test_copyArrayContact()
+{
+    Contact arr[2] = {
+        {"이서", " 010-1234-5678"},
+        {"서연",   "010-9876-5432"}
+    };
+
+    Contact null[2] = { 0 };
+
+    copyArrayContact(arr, null, 2);
+
+    printf("원본 배열 : \n");
+    printArrayContact(arr, 2);
+
+    printf("복사된 배열 : \n");
+    printArrayContact(null, 2);
+
+    return 0;
 }
 
 // 출력 테스트 함수
 int test_printArrayContact() 
 {
     Contact arr[3] = {
-        {"길동", "010-1111-2222"},
+        {"민기", "010-1111-2222"},
         {"철수", "010-3333-4444"},
         {"기민", "010-5555-6666"}
     };
 
-    printf("test_printArrayContact 결과:\n");
+    printf("결과 : \n");
     printArrayContact(arr, 3);
-    return 0;
-}
-
-// 복사 테스트 함수
-int test_copyArrayContact() 
-{
-    Contact src[2] = {
-        {"Alice", "010-1234-5678"},
-        {"Bob",   "010-9876-5432"}
-    };
-    Contact dst[2];
-
-    copyArrayContact(src, dst, 2);
-
-    printf("원본 배열:\n");
-    printArrayContact(src, 2);
-
-    printf("복사된 배열:\n");
-    printArrayContact(dst, 2);
 
     return 0;
 }
-

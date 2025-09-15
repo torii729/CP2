@@ -12,21 +12,16 @@
 
 #include <stdio.h>
 
+void copyArrayFloat(float from[], float to[], int size);
+void printArrayFloat(float R[], int size);
+int test_copyArrayFloat();
+int test_printArrayFloat();
+
 int main()
 {
     test_printArrayFloat();
     test_copyArrayFloat();
     return 0;
-}
-
-// 실수 배열 출력 함수
-void printArrayFloat(float R[], int size)
-{
-    for (int i = 0; i < size; i++) 
-    {
-        printf("%.2f ", R[i]);
-    }
-    printf("\n");
 }
 
 // 실수 배열 복사 함수
@@ -38,26 +33,40 @@ void copyArrayFloat(float from[], float to[], int size)
     }
 }
 
-// 배열 출력 테스트 함수
-int test_printArrayFloat()
+// 실수 배열 출력 함수
+void printArrayFloat(float R[], int size)
 {
-    float arr[5] = { 1.1, 2.2, 3.3, 4.4, 5.5 };
-    printf("test_printArrayFloat 결과: ");
-    printArrayFloat(arr, 5);
-    return 0;
+    for (int i = 0; i < size; i++)
+    {
+        printf("%.1f ", R[i]);
+    }
+    printf("\n");
 }
 
 // 배열 복사 테스트 함수
 int test_copyArrayFloat()
 {
-    float src[5] = { 10.0, 20.0, 30.0, 40.0, 50.0 };
-    float dst[5];
-    copyArrayFloat(src, dst, 5);
+    float num_float[5] = { 1.0, 22.0, 333.0, 4444.0, 5555.0 };
+    float null[5] = { 0 };
 
-    printf("원본 배열: ");
-    printArrayFloat(src, 5);
-    printf("복사된 배열: ");
-    printArrayFloat(dst, 5);
+    copyArrayFloat(num_float, null, 5);
+
+    printf("원본 배열 : ");
+    printArrayFloat(num_float, 5);
+
+    printf("복사된 배열 : ");
+    printArrayFloat(null, 5);
+
+    return 0;
+}
+
+// 배열 출력 테스트 함수
+int test_printArrayFloat()
+{
+    float arr[5] = { 6.6, 7.7, 8.8, 9.9, 10.1 };
+
+    printf("배열 출력 테스트 : ");
+    printArrayFloat(arr, 5);
 
     return 0;
 }
