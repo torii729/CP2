@@ -16,7 +16,7 @@ void shuffleArray(int arr[], int size); // 배열 섞기
 
 int main()
 {
-    int arr[10];
+    int arr[10] = { 0 };
     srand(time(NULL));
 
     initArray(arr, 10);
@@ -30,6 +30,7 @@ int main()
     return 0;
 }
 
+// 배열 초기화
 void initArray(int arr[], int size)
 {
     for (int i = 0; i < size; i++)
@@ -38,6 +39,7 @@ void initArray(int arr[], int size)
     }
 }
 
+// 배열 출력
 void printArray(int arr[], int size)
 {
     for (int i = 0; i < size; i++)
@@ -47,15 +49,16 @@ void printArray(int arr[], int size)
     printf("\n");
 }
 
+// 배열 섞기 rand() 함수를 통한
 void shuffleArray(int arr[], int size)
 {
     for (int i = 0; i < 100; i++)
     {
-        int a = rand() % size;
+        int a = rand() % size; // 나머지로 인덱스를 지정함 -> 진짜 랜덤으로 넣겠단 뜻
         int b = rand() % size;
 
-        int tmp = arr[a];
+        int temp = arr[a];
         arr[a] = arr[b];
-        arr[b] = tmp;
+        arr[b] = temp;
     }
 }
