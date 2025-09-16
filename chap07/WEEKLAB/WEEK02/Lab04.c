@@ -109,7 +109,14 @@ int selectionSortInt(void* base, int n, int sz, int (*cmp)(void*, void*))
 
 // 4번. qsort로 Contact 정렬
 
-/* 이름 기준 오름차순 */
+
+
+
+
+
+
+
+// 아니 이게 뭐임?
 int contactUp(const void* a, const void* b)
 {
     const Contact* x = (const Contact*)a;
