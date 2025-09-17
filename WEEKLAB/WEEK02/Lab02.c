@@ -1,4 +1,6 @@
 /*
+    PPT chap07
+
 	구조체 타입을 하나 임의로 선언 : 예) 연락처(이름, 전화번호, 메모)
 	typedef struct _contact { char name[64]; char phone1[24] } Contact;
 

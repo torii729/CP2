@@ -1,4 +1,6 @@
 /*
+    PPT chap07
+
 	실수 배열에 대한 다음 두 함수를 구현하고
 	printArrayFloat(float R[], int size)
 	copyArrayFloat(float from[], float to[], int size)

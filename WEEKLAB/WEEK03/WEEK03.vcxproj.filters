@@ -15,6 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ClassLab01.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassLab02.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="Lab01.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
