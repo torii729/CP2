@@ -1,5 +1,5 @@
 /*
-    PPT chap07
+    PPT 문제 풀이
 
 	실수 배열에 대한 다음 두 함수를 구현하고
 	printArrayFloat(float R[], int size)

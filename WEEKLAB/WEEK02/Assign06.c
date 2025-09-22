@@ -1,11 +1,11 @@
-/*   
+/*
 	Chap07 Programming Assignment 풀이
 
 	파일명 : Assign06.c
 	문제 : 6. 크기가 10인 실수형 배열에 대해서 원소들을 역순으로 만드는 프로그램을 작성하시오.
 	실수형 배열의 초기값은 마음대로 정하시오.
 
-	작성일자 : 2025.09.15
+	작성일자 : 2025.09.16
 */
 
 #include <stdio.h>
@@ -64,7 +64,7 @@ void ArrayRe(double arrayDouble[], int size)
 		포인터를 이용한 다른 방법으로는,
 		배열 선언 후, 다른 포인터 변수를 선언한다.
 		double *p = &arrayDouble[9];
-		
+
 		그리고 역순으로 출력할 때, double rev[size]; 새로 선언,
 		그 배열에다 p를 저장하는 반복문
 		for(int a = 0; a < size; a++, p--)

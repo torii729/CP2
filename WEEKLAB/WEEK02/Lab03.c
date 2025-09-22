@@ -1,5 +1,5 @@
 /*
-    PPT chap07
+    PPT 문제 풀이
 
 	배열 범위 중 최소값 찾는 함수 :
 	int findMinInt(int R[], int from, int to) : from부터 to까지 최소값을 갖는 인덱스 하나를 반환
